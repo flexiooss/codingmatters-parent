@@ -150,6 +150,22 @@
                     <artifactId>maven-pmd-plugin</artifactId>
                     <version>3.6</version>
                 </plugin>
+
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>io.reformanda.semper</groupId>
+                    <artifactId>dependencyversion-maven-plugin</artifactId>
+                    <version>1.0.1</version>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
