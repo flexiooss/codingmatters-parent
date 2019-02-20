@@ -18,7 +18,7 @@ stages:
   - name: deploy
     exec:
       - $NOTIFY --data-urlencode "status=2" --data-urlencode "current-stage=$STAGE"
-      - $MVN deploy -DskipTests -Pattach-source-and-javadocs,sign-artifacts -Dgpg.passphrase=$GPG_PASS -Dgpg.homedir=/gnupg
+      - $MVN_DEPLOY
     onlyWhen:
       - branch in (master, develop)
 
@@ -51,6 +51,7 @@ env:
   - PIPELINES_URL: https://pipelines.ci.flexio.io/pipelines
   - DEPENDENCIES_URL: https://dependencies.ci.flexio.io/dependencies
   - CI_TOOLS_IMAGE: codingmatters/ci-tools:0.0.1-SNAPSHOT
+
   - DOCKER_VOLUMES: -v $SRC:/src -v $WORKSPACE/.m2:/m2 -v $WORKSPACE/secrets/settings.xml:/settings.xml -v $WORKSPACE/gnupg:/gnupg
   - DOCKER_ENV: --env REPOSITORY_ID="$REPOSITORY_ID" --env REPOSITORY="$REPOSITORY" --env CHECKOUT_SPEC="$CHECKOUT_SPEC"
   - DOCKER_CMD: docker run --user $(id -u):$(id -g) --rm
@@ -58,6 +59,8 @@ env:
 
   - MVN_OPTS: -B -Dcodingmatters.docker.namespace=codingmatters -Ddocker.registry=registry.containers.ovh.net
   - MVN: $DOCKER mvn -Dmaven.repo.local=/m2 --settings /settings.xml $MVN_OPTS
+  - MVN_DEPLOY: $MVN deploy -DskipTests -Pattach-source-and-javadocs,sign-artifacts -Dgpg.passphrase=$GPG_PASS -Dgpg.homedir=/gnupg
+
   - UPLOAD_PROJECT_METADATA: docker run --rm --env REPOSITORY_ID="$REPOSITORY_ID" --env REPOSITORY="$REPOSITORY" --env CHECKOUT_SPEC="$CHECKOUT_SPEC" -v $SRC:/src -v $WORKSPACE/.m2:/root/.m2 -v $WORKSPACE/secrets/settings.xml:/root/.m2/settings.xml $CI_TOOLS_IMAGE /usr/local/bin/upload-project-metadata.sh $DEPENDENCIES_URL /src
   - TRIGGER_DOWNSTREAM: docker run --rm --env REPOSITORY_ID="$REPOSITORY_ID" --env REPOSITORY="$REPOSITORY" --env CHECKOUT_SPEC="$CHECKOUT_SPEC" -v $SRC:/src -v $WORKSPACE/.m2:/root/.m2 -v $WORKSPACE/secrets/settings.xml:/root/.m2/settings.xml $CI_TOOLS_IMAGE /usr/local/bin/trigger-downstream.sh $PIPELINES_URL $DEPENDENCIES_URL $REPOSITORY_ID "$REPOSITORY" "$CHECKOUT_SPEC"
 
