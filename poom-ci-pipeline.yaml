@@ -6,7 +6,7 @@ stages:
       - git clone -b $FLEXIO_SCRIPTS_BRANCH $FLEXIO_SCRIPTS $WORKSPACE/flexio-ci-scripts && export PATH=$PATH:$WORKSPACE/flexio-ci-scripts/bin
       - docker pull $CI_TOOLS_IMAGE
       - mkdir -p $WORKSPACE/.m2
-      - mkdir -p $WORKSPACE/gnupg
+#      - mkdir -p $WORKSPACE/gnupg
 #      - $DOCKER_CMD -v $WORKSPACE/secrets/codesigning.asc:/codesigning.asc $CI_TOOLS_IMAGE gpg --homedir /gnupg --batch --import /codesigning.asc
 #      - $DOCKER gpg --homedir /gnupg --list-keys
 #      - $DOCKER gpg --homedir /gnupg --list-secret-keys
@@ -65,5 +65,5 @@ secrets:
   - name: settings.xml
     content: $SRC/.poom-ci-pipeline/settings-oss.xml.enc
     as: file
-  - name: codesigning.asc
-    content: $SRC/.poom-ci-pipeline/codesigning.asc.enc
+#  - name: codesigning.asc
+#    content: $SRC/.poom-ci-pipeline/codesigning.asc.enc
