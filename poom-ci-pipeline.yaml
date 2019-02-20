@@ -9,8 +9,6 @@ stages:
       - mkdir -p $WORKSPACE/gnupg
       - $DOCKER gpg --homedir /gnupg --list-keys
       - $DOCKER_CMD -v $WORKSPACE/gnupg:/gnupg -v $WORKSPACE/secrets/codesigning.asc:/codesigning.asc $CI_TOOLS_IMAGE gpg --homedir /gnupg --batch --import /codesigning.asc
-      - $DOCKER gpg --homedir /gnupg --list-keys
-      - $DOCKER gpg --homedir /gnupg --list-secret-keys
 
   - name: build
     exec:
