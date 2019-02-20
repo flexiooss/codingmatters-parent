@@ -186,7 +186,8 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
-                    <version>1.6.0</version>
+                    <!-- upgrade blocked by https://github.com/mojohaus/exec-maven-plugin/issues/76 -->
+                    <version>1.5.0</version>
                 </plugin>
 
                 <plugin>
