@@ -20,7 +20,7 @@ stages:
   - name: deploy
     exec:
       - $NOTIFY --data-urlencode "status=2" --data-urlencode "current-stage=$STAGE"
-      - $MVN deploy -DskipTests -Pattach-source-and-javadocs,sign-artifacts
+      - $MVN deploy -DskipTests -Pattach-source-and-javadocs,sign-artifacts -Dgpg.passphrase=$GPG_PASS -Dgpg.homedir=/gnupg
     onlyWhen:
       - branch in (master, develop)
 
@@ -69,3 +69,6 @@ secrets:
   - name: codesigning.asc
     content: $SRC/.poom-ci-pipeline/codesigning.asc.enc
     as: file
+  - name: GPG_PASS
+    content: $SRC/.poom-ci-pipeline/gpg.pass.enc
+    as: var

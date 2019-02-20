@@ -271,9 +271,6 @@
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
-                                <configuration>
-                                    <passphrase>2BafQpyJwHppMPTJGlEe</passphrase>
-                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
