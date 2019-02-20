@@ -65,5 +65,5 @@ secrets:
   - name: settings.xml
     content: $SRC/.poom-ci-pipeline/settings-oss.xml.enc
     as: file
-#  - name: codesigning.asc
-#    content: $SRC/.poom-ci-pipeline/codesigning.asc.enc
+  - name: codesigning.asc
+    content: $SRC/.poom-ci-pipeline/codesigning.asc.enc
