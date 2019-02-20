@@ -67,3 +67,4 @@ secrets:
     as: file
   - name: codesigning.asc
     content: $SRC/.poom-ci-pipeline/codesigning.asc.enc
+    as: file
