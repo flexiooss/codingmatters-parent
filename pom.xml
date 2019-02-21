@@ -9,8 +9,8 @@
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
-    <name>${project.groupId}:${project.artifactId}</name>
-    <description>provides global plugin management</description>
+    <name>Codingmatter's Parent</name>
+    <description>provides global dependency / plugin management</description>
 
     <url>https://github.com/flexiooss/codingmatters-parent</url>
 
@@ -48,29 +48,17 @@
 
     <repositories>
         <repository>
-            <id>oss-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases><enabled>false</enabled></releases>
-            <snapshots><enabled>true</enabled></snapshots>
-        </repository>
-        <repository>
             <id>oss-staging</id>
             <url>https://oss.sonatype.org/content/groups/staging</url>
-            <releases><enabled>false</enabled></releases>
+            <releases><enabled>true</enabled></releases>
             <snapshots><enabled>true</enabled></snapshots>
         </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <id>oss-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases><enabled>false</enabled></releases>
-            <snapshots><enabled>true</enabled></snapshots>
-        </pluginRepository>
-        <pluginRepository>
             <id>oss-staging</id>
             <url>https://oss.sonatype.org/content/groups/staging</url>
-            <releases><enabled>false</enabled></releases>
+            <releases><enabled>true</enabled></releases>
             <snapshots><enabled>true</enabled></snapshots>
         </pluginRepository>
     </pluginRepositories>
@@ -93,7 +81,7 @@
             <dependency>
                 <groupId>org.codingmatters</groupId>
                 <artifactId>codingmatters-external-dependencies-bom</artifactId>
-                <version>1.0.0</version>
+                <version>1.0.1</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
