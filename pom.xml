@@ -74,6 +74,11 @@
             <artifactId>hamcrest-all</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -81,7 +86,7 @@
             <dependency>
                 <groupId>org.codingmatters</groupId>
                 <artifactId>codingmatters-external-dependencies-bom</artifactId>
-                <version>1.3.0</version>
+                <version>1.4.0-SNAPSHOT</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -90,6 +95,22 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>check-dependencies</id>
+                        <configuration>
+                            <ignoredUnusedDeclaredDependencies combine.children="append">
+                                <ignoredUnusedDeclaredDependency>junit:junit</ignoredUnusedDeclaredDependency>
+                                <ignoredUnusedDeclaredDependency>org.hamcrest:hamcrest-all</ignoredUnusedDeclaredDependency>
+                                <ignoredUnusedDeclaredDependency>org.hamcrest:hamcrest-core</ignoredUnusedDeclaredDependency>
+                            </ignoredUnusedDeclaredDependencies>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -225,6 +246,10 @@
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>3.0.0-M3</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>3.1.1</version>
                 </plugin>
 
                 <plugin>
