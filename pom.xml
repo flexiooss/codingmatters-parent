@@ -29,6 +29,10 @@
         </developer>
     </developers>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <scm>
         <connection>scm:git:git@github.com:flexiooss/codingmatters-parent</connection>
         <developerConnection>scm:git:git@github.com:flexiooss/codingmatters-parent.git</developerConnection>
