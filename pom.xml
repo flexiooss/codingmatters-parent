@@ -45,7 +45,7 @@
             <url>http://maven.ci.flexio.io:8080/repository/codingmatters-snapshots/</url>
         </snapshotRepository>
         <repository>
-            <id>codingmatters-release</id>
+            <id>codingmatters-releases</id>
             <url>http://maven.ci.flexio.io:8080/repository/codingmatters-releases/</url>
         </repository>
     </distributionManagement>
