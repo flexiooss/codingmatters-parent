@@ -6,7 +6,7 @@
 
     <groupId>org.codingmatters</groupId>
     <artifactId>codingmatters-parent</artifactId>
-    <version>1.6.0</version>
+    <version>1.7.0</version>
     <packaging>pom</packaging>
 
     <name>Codingmatter's Parent</name>
@@ -45,8 +45,8 @@
             <url>http://maven.ci.flexio.io:8080/repository/codingmatters-snapshots/</url>
         </snapshotRepository>
         <repository>
-            <id>codingmatters-snapshots</id>
-            <url>http://maven.ci.flexio.io:8080/repository/codingmatters-snapshots/</url>
+            <id>codingmatters-release</id>
+            <url>http://maven.ci.flexio.io:8080/repository/codingmatters-releases/</url>
         </repository>
     </distributionManagement>
 
