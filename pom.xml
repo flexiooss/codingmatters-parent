@@ -122,6 +122,9 @@
                                 <ignoredUnusedDeclaredDependency>junit:junit</ignoredUnusedDeclaredDependency>
                                 <ignoredUnusedDeclaredDependency>org.hamcrest</ignoredUnusedDeclaredDependency>
                             </ignoredUnusedDeclaredDependencies>
+                            <ignoredUsedUndeclaredDependencies combine.children="append">
+                                <ignoredUsedUndeclaredDependency>org.hamcrest</ignoredUsedUndeclaredDependency>
+                            </ignoredUsedUndeclaredDependencies>
                         </configuration>
                     </execution>
                 </executions>
