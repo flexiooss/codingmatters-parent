@@ -6,7 +6,7 @@
 
     <groupId>org.codingmatters</groupId>
     <artifactId>codingmatters-parent</artifactId>
-    <version>1.10.0</version>
+    <version>1.11.0</version>
     <packaging>pom</packaging>
 
     <name>Codingmatter's Parent</name>
@@ -87,12 +87,12 @@
         </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
+            <artifactId>hamcrest</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-core</artifactId>
+            <artifactId>hamcrest-library</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -102,7 +102,7 @@
             <dependency>
                 <groupId>org.codingmatters</groupId>
                 <artifactId>codingmatters-external-dependencies-bom</artifactId>
-                <version>1.9.0</version>
+                <version>1.10.0</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -120,9 +120,11 @@
                         <configuration>
                             <ignoredUnusedDeclaredDependencies combine.children="append">
                                 <ignoredUnusedDeclaredDependency>junit:junit</ignoredUnusedDeclaredDependency>
-                                <ignoredUnusedDeclaredDependency>org.hamcrest:hamcrest-all</ignoredUnusedDeclaredDependency>
-                                <ignoredUnusedDeclaredDependency>org.hamcrest:hamcrest-core</ignoredUnusedDeclaredDependency>
+                                <ignoredUnusedDeclaredDependency>org.hamcrest</ignoredUnusedDeclaredDependency>
                             </ignoredUnusedDeclaredDependencies>
+                            <ignoredUsedUndeclaredDependencies combine.children="append">
+                                <ignoredUsedUndeclaredDependency>org.hamcrest</ignoredUsedUndeclaredDependency>
+                            </ignoredUsedUndeclaredDependencies>
                         </configuration>
                     </execution>
                 </executions>
