@@ -6,7 +6,7 @@
 
     <groupId>org.codingmatters</groupId>
     <artifactId>codingmatters-parent</artifactId>
-    <version>1.11.0</version>
+    <version>1.12.0</version>
     <packaging>pom</packaging>
 
     <name>Codingmatter's Parent</name>
@@ -102,7 +102,7 @@
             <dependency>
                 <groupId>org.codingmatters</groupId>
                 <artifactId>codingmatters-external-dependencies-bom</artifactId>
-                <version>1.10.0</version>
+                <version>1.11.0</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -111,6 +111,27 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <executions>
+                    <execution>
+                        <id>enforce</id>
+                        <configuration>
+                            <rules>
+                                <dependencyConvergence>
+                                    <!-- Allow snapshot match timestamp versions -->
+                                    <uniqueVersions>false</uniqueVersions>
+                                </dependencyConvergence>
+                            </rules>
+                        </configuration>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
