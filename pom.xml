@@ -114,13 +114,16 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>1.0.1</version>
+                <version>3.0.0-M3</version>
                 <executions>
                     <execution>
                         <id>enforce</id>
                         <configuration>
                             <rules>
-                                <DependencyConvergence/>
+                                <dependencyConvergence>
+                                    <!-- Allow snapshot match timestamp versions -->
+                                    <uniqueVersions>false</uniqueVersions>
+                                </dependencyConvergence>
                             </rules>
                         </configuration>
                         <goals>
