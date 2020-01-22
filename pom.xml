@@ -113,27 +113,6 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.0.0-M3</version>
-                <executions>
-                    <execution>
-                        <id>enforce</id>
-                        <configuration>
-                            <rules>
-                                <dependencyConvergence>
-                                    <!-- Allow snapshot match timestamp versions -->
-                                    <uniqueVersions>false</uniqueVersions>
-                                </dependencyConvergence>
-                            </rules>
-                        </configuration>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
@@ -170,6 +149,10 @@
                         </goals>
                         <configuration>
                             <rules>
+                                <dependencyConvergence>
+                                    <!-- Allow snapshot match timestamp versions -->
+                                    <uniqueVersions>false</uniqueVersions>
+                                </dependencyConvergence>
                                 <requireMavenVersion>
                                     <version>3.0.5</version>
                                 </requireMavenVersion>
