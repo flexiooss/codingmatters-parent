@@ -102,7 +102,7 @@
             <dependency>
                 <groupId>org.codingmatters</groupId>
                 <artifactId>codingmatters-external-dependencies-bom</artifactId>
-                <version>1.12.0</version>
+                <version>1.13.0-SNAPSHOT</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -133,11 +133,12 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>13</source>
+                    <target>13</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
-            </plugin>
+	</plugin>
+	<!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
@@ -150,7 +151,6 @@
                         <configuration>
                             <rules>
                                 <dependencyConvergence>
-                                    <!-- Allow snapshot match timestamp versions -->
                                     <uniqueVersions>false</uniqueVersions>
                                 </dependencyConvergence>
                                 <requireMavenVersion>
@@ -160,7 +160,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+	</plugin> -->
             <plugin>
                 <groupId>io.reformanda.semper</groupId>
                 <artifactId>dependencyversion-maven-plugin</artifactId>
@@ -222,7 +222,14 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-plugin-plugin</artifactId>
-                    <version>3.6.0</version>
+		            <version>3.6.0</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.ow2.asm</groupId>
+                            <artifactId>asm</artifactId>
+                            <version>7.3.1</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -281,6 +288,18 @@
                 <plugin>
                     <artifactId>maven-dependency-plugin</artifactId>
                     <version>3.1.1</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.ow2.asm</groupId>
+                            <artifactId>asm</artifactId>
+                            <version>7.3.1</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.shared</groupId>
+                            <artifactId>maven-dependency-analyzer</artifactId>
+                            <version>1.11.1</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
 
                 <plugin>
