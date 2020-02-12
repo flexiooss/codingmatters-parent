@@ -319,7 +319,7 @@
 
     <profiles>
         <profile>
-            <id>attach-source-and-javadocs</id>
+            <id>attach-sources</id>
             <build>
                 <plugins>
                     <plugin>
@@ -334,6 +334,13 @@
                             </execution>
                         </executions>
                     </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>attach-javadocs</id>
+            <build>
+                <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
