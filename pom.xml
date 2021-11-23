@@ -6,7 +6,7 @@
 
 	<groupId>org.codingmatters</groupId>
 	<artifactId>codingmatters-parent</artifactId>
-	<version>1.31.0</version>
+	<version>1.32.0</version>
 	<packaging>pom</packaging>
 
 	<name>Codingmatter's Parent</name>
@@ -118,7 +118,7 @@
 			<dependency>
 				<groupId>org.codingmatters</groupId>
 				<artifactId>codingmatters-external-dependencies-bom</artifactId>
-				<version>1.37.0</version>
+				<version>1.38.0</version>
 				<scope>import</scope>
 				<type>pom</type>
 			</dependency>
