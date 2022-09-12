@@ -6,7 +6,7 @@
 
 	<groupId>org.codingmatters</groupId>
 	<artifactId>codingmatters-parent</artifactId>
-	<version>1.32.0</version>
+	<version>1.33.0</version>
 	<packaging>pom</packaging>
 
 	<name>Codingmatter's Parent</name>
@@ -42,18 +42,18 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>codingmatters-snapshots</id>
-			<url>http://maven.ci.flexio.io:8080/repository/codingmatters-snapshots/</url>
+			<url>https://mvn.ci.flexio.io/codingmatters-snapshots/</url>
 		</snapshotRepository>
 		<repository>
 			<id>codingmatters-releases</id>
-			<url>http://maven.ci.flexio.io:8080/repository/codingmatters-releases/</url>
+			<url>https://mvn.ci.flexio.io/codingmatters-releases/</url>
 		</repository>
 	</distributionManagement>
 
 	<repositories>
 		<repository>
 			<id>codingmatters-snapshots</id>
-			<url>http://maven.ci.flexio.io:8080/repository/codingmatters-snapshots/</url>
+			<url>https://mvn.ci.flexio.io/codingmatters-snapshots/</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
@@ -63,7 +63,7 @@
 		</repository>
 		<repository>
 			<id>codingmatters-releases</id>
-			<url>http://maven.ci.flexio.io:8080/repository/codingmatters-releases/</url>
+			<url>https://mvn.ci.flexio.io/codingmatters-releases/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -75,7 +75,7 @@
 	<pluginRepositories>
 		<pluginRepository>
 			<id>codingmatters-snapshots</id>
-			<url>http://maven.ci.flexio.io:8080/repository/codingmatters-snapshots/</url>
+			<url>https://mvn.ci.flexio.io/codingmatters-snapshots/</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
@@ -85,7 +85,7 @@
 		</pluginRepository>
 		<pluginRepository>
 			<id>codingmatters-releases</id>
-			<url>http://maven.ci.flexio.io:8080/repository/codingmatters-releases/</url>
+			<url>https://mvn.ci.flexio.io/codingmatters-releases/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -118,7 +118,7 @@
 			<dependency>
 				<groupId>org.codingmatters</groupId>
 				<artifactId>codingmatters-external-dependencies-bom</artifactId>
-				<version>1.38.0</version>
+				<version>1.39.0</version>
 				<scope>import</scope>
 				<type>pom</type>
 			</dependency>
