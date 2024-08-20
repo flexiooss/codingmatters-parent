@@ -6,7 +6,7 @@
 
 	<groupId>org.codingmatters</groupId>
 	<artifactId>codingmatters-parent</artifactId>
-	<version>1.43.0</version>
+	<version>1.44.0</version>
 	<packaging>pom</packaging>
 
 	<name>Codingmatter's Parent</name>
@@ -111,6 +111,16 @@
 			<artifactId>hamcrest-library</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
@@ -136,6 +146,8 @@
 						<configuration>
 							<ignoredUnusedDeclaredDependencies combine.children="append">
 								<ignoredUnusedDeclaredDependency>junit:junit</ignoredUnusedDeclaredDependency>
+								<ignoredUnusedDeclaredDependency>org.junit.jupiter:junit-jupiter-api</ignoredUnusedDeclaredDependency>
+								<ignoredUnusedDeclaredDependency>org.junit.jupiter:junit-jupiter-params</ignoredUnusedDeclaredDependency>
 								<ignoredUnusedDeclaredDependency>org.hamcrest</ignoredUnusedDeclaredDependency>
 							</ignoredUnusedDeclaredDependencies>
 							<ignoredUsedUndeclaredDependencies combine.children="append">
